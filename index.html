@@ -1,119 +1,162 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>冻参谋加盟</title>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
-<link rel="stylesheet" href="css/swiper.min.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<script src="js/swiper.min.js"></script>
-<script src="js/swiper.animate.min.js"></script>
-<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <title>冻参谋加盟</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/Swiper/3.0.4/js/swiper.min.js"></script>
+  <script src="js/swiper.animate.min.js"></script>
 
-<!--<link rel="stylesheet" href="/dist/css/swiper.min.css">
-<link rel="stylesheet" href="/dist/css/animate.min.css">
-<script src="/dist/js/swiper.min.js"></script>
-<script src="/dist/js/swiper.animate.min.js"></script>-->
+	<link href="https://cdn.bootcss.com/Swiper/3.0.4/css/swiper.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/animate.css/3.1.0/animate.min.css" rel="stylesheet">
+	<script>
+		// rem适配
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 640*100 + 'px';
+	</script>
+    <style>
 
-<style>
-/* rem适配 */
-@media screen and (min-width: 450px) {
-  html {
-    font-size: 60px;
-  }
-}
-@media screen and (max-width: 350px) {
-  html {
-    font-size: 47px;
-  }
-}
-@media screen and (max-width: 361px) {
-  html {
-    font-size: 50px;
-  }
-}
-*{
-	margin:0;
-	padding:0;
-}
-html,body{
-	height:100%;
-}
-body{
-	font-family:"microsoft yahei";
-}
-.swiper-container {
-	width: 100%;
-    height: 100%;
-	background:#fff;
-}  
-.swiper-slide{
-	width:100%;
-	height:100%;
-}
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: "microsoft yahei";
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+      }
+      .swiper-slide {
+        width: 100%;
+        height: 100%;
+      }
 
-img{
-	display:block;
-}
-.swiper-pagination-bullet {
-width: 6px;
-height: 6px;
-background: #fff;
-opacity: .4;
-}
-.swiper-pagination-bullet-active {
-opacity: 1;
-}
-@-webkit-keyframes tipmove{0%{bottom:10px;opacity:0}50%{bottom:15px;opacity:1}100%{bottom:20px;opacity:0}}
-.ani{
-	position:absolute;
+      img {
+        display: block;
+      }
+      .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        opacity: 0.4;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+      @-webkit-keyframes tipmove {
+        0% {
+          bottom: 10px;
+          opacity: 0;
+        }
+        50% {
+          bottom: 15px;
+          opacity: 1;
+        }
+        100% {
+          bottom: 20px;
+          opacity: 0;
+        }
+      }
+      .ani {
+        position: absolute;
+      }
+      .txt {
+        position: absolute;
+      }
+      #array {
+        position: absolute;
+        z-index: 999;
+        -webkit-animation: tipmove 1.5s infinite ease-in-out;
+      }
+	  /* 各页面单独样式 */
+	  .swiper-slide div {
+        font-size: 0.215rem;
+	  }
+	  .big {
+        font-size: 0.28rem;
+        font-weight: bolder;
+      }
+      .swiper-slide1 {
+        background: url(upload/bg1.png) no-repeat left top;
+        background-size: 100% 100%;
+      }
+	.swiper-slide2 {
+		background: url(upload/bg2.png) no-repeat left top;
+		background-size: 100% 100%;
+		font-size: 0.8rem;
 	}
-.txt{
-	position:absolute;
-}
-#array{
-	position:absolute;z-index:999;-webkit-animation: tipmove 1.5s infinite ease-in-out;
-}
-/* 各页面单独样式 */
-.swiper-slide1{
-	background:url(upload/bg1.png) no-repeat left top;
-	background-size:100% 100%;
-}
-.swiper-slide2{
-	background:url(upload/bg2.png) no-repeat left top;
-	background-size:100% 100%;
-	font-size: 0.9rem;
-	
-}
-.swiper-slide3{
-	background:url(upload/bg3.png) no-repeat left top;
-	background-size:100% 100%;
-	font-size: 0.9rem;
-	
-}
-.big{
-	font-size: 1.2rem;
-	font-weight: bolder;
-}
-</style>
-</head>
+	.swiper-slide3 {
+		background: url(upload/bg3.png) no-repeat left top;
+		background-size: 100% 100%;
+	}
+	.swiper-slide4 {
+		background: url(upload/bg4.png) no-repeat left top;
+		background-size: 100% 100%;
+		font-size: 0.8rem;
+	 }
+  
+	.swiper-slide5 {
+		background: url(upload/bg5.png) no-repeat left top;
+		background-size: 100% 100%;
+	}
+	.swiper-slide5 .online{
+		  display: flex;
+		  align-items:center;
+		  height: 1rem;
+		  
+	}
+	.swiper-slide5 .online input{
+	  width: 4rem;
+	  border: 0;
+	  height: 0.5rem;
+	  border-radius: 7px;
+    padding-left: 0.2rem;
+    outline:none
+	}
 
-<body>
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-    <!-------------slide1----------------->
-<!--      <section class="swiper-slide swiper-slide1">
-        <img src="upload/1-1.png" class="ani resize" style="width:280rem;height:100rem;left:20rem;top:50rem;z-index:1;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s"   > 
-        <img src="upload/1-2.png" class="ani resize" style="width:200rem;height:60rem;left:60%;bottom:2rem;transform: translate(-50%);z-index:2;" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1s"   > 
-		</section> -->
-     <!---------------slide2-------------->   
-       <section class="swiper-slide swiper-slide2">
-			<div class="ani resize" style="height:100rem;left:35rem;top:210rem;z-index:1;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+		<!---------------slide1-------------->
+        <section class="swiper-slide swiper-slide1">
+          <img
+            src="upload/1-1.png"
+            class="ani resize"
+            style="width:280rem;height:100rem;left:20rem;top:50rem;z-index:1;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0s"
+          />
+          <img
+            src="upload/1-2.png"
+            class="ani resize"
+            style="width:200rem;height:60rem;left:60%;bottom:1.2rem;transform: translate(-50%);z-index:2;"
+            swiper-animate-effect="fadeInUp"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="1s"
+          />
+        </section>
+        <!---------------slide2-------------->
+        <section class="swiper-slide swiper-slide2">
+			<div class="ani resize" style="left:30rem;top:210rem;z-index:1;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
 				<p>2019年</p>
 				<p>客户被众多互联网平台分流</p>
 				<p>获客成本越来越高</p>
 			</div>
-			<div class="ani resize" style="height:100rem;left:35rem;top:260rem;z-index:2;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.75s">
+			<div class="ani resize" style="left:30rem;top:260rem;z-index:2;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.75s">
 				<p>在过去的2018年</p>
 				<p>做冻品配送的公司</p>
 				<p>如雨后春笋般的越来越多</p>
@@ -121,7 +164,7 @@ opacity: 1;
 				<p class="big" >各位老板的获客成本从几块上涨到几十块</p>
 				<p>现在还有上行的趋势</p>
 			</div>
-			<div class="ani resize" style="height:100rem;left:35rem;top:360rem;z-index:3;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
+			<div class="ani resize" style="left:30rem;top:360rem;z-index:3;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
 				<p class="big">加入冻参谋</p>
 				<p>平台不仅免费给提供海量的客户资源</p>
 				<p>而且还可以免费使用客户管理系统</p>
@@ -130,14 +173,14 @@ opacity: 1;
 			</div>
         
         </section>
-     <!----------------slide3-------------->
-       <!-- <section class="swiper-slide swiper-slide3">
-			<div class="ani resize" style="height:100rem;left:35rem;top:210rem;z-index:1;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+        <!----------------slide3-------------->
+        <section class="swiper-slide swiper-slide3">
+			<div class="ani resize" style="left:35rem;top:210rem;z-index:1;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
 				<p>2019年</p>
 				<p>辛辛苦苦一单只赚几块钱</p>
 				<p>客户还觉得你的货太贵</p>
 			</div>
-			<div class="ani resize" style="height:100rem;left:35rem;top:260rem;z-index:2;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.75s">
+			<div class="ani resize" style="left:35rem;top:260rem;z-index:2;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.75s">
 				<p>冻品人</p>
 				<p>起早贪黑</p>
 				<p>客户的一个电话就能让你从睡梦中醒来</p>
@@ -145,68 +188,204 @@ opacity: 1;
 				<p class="big">客户还说这个贵了</p>
 				<p>简直不要太心酸</p>
 			</div>
-			<div class="ani resize" style="height:100rem;left:35rem;top:360rem;z-index:3;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
+			<div class="ani resize" style="left:35rem;top:360rem;z-index:3;color: #FFFFFF;" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
 				<p class="big">加入冻参谋</p>
 				<p>4000+商品价格实时更新</p>
 				<p>给您提供最优质的供应商商品</p>
 				<p class="big">让您再也不用为报价而烦忧</p>
 				<p class="big">5秒找到价格最低质量最好的货</p>
-			</div>
-      
-        
-        </section> -->
+			</div>    
+        </section>
+        <!----------------slide4-------------->
+        <section class="swiper-slide swiper-slide4">
+          <div
+            class="ani resize"
+            style="left:35rem;top:200rem;z-index:1;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0s"
+          >
+            <p>2019年</p>
+            <p>人力成本越来越高</p>
+            <p>店铺、库房租金蹭蹭上涨</p>
+          </div>
+          <div
+            class="ani resize"
+            style="left:35rem;top:245rem;z-index:2;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.75s"
+          >
+            <p>做冻品生意的流程可不少</p>
+            <p>喊货、配货、开单、送货、账务处理、售后处理、</p>
+            <p>客户开发与维护......</p>
+            <p>要想生意做好做大</p>
+            <p>这些步骤一个都不能少</p>
+            <p>可是传统的只能靠人力来做</p>
+            <p class="big">不仅员工越请越多开支提升了</p>
+            <p class="big">而且在对接过程中还容易出差错</p>
+          </div>
+          <div
+            class="ani resize"
+            style="left:35rem;top:360rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="1.5s"
+          >
+            <p class="big">加入冻参谋</p>
+            <p>冻参谋配货、收货系统</p>
+            <p class="big">1个人就可以准确处理100单/天的订单</p>
+            <p class="big">让您每月节省10000元的人员开支不是梦。</p>
+          </div>
+        </section>
+        <!----------------slide5-------------->
+        <section class="swiper-slide swiper-slide5">
+          <img
+            src="upload/5-1.png"
+            class="ani resize"
+            style="width:300rem;height:50rem;left:10rem;top:60rem;z-index:1;"
+            swiper-animate-effect="fadeInDown"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0s"
+          />
+          <img
+            src="upload/5-2.png"
+            class="ani resize"
+            style="width:195rem;height:28rem;left:60rem;top:120rem;z-index:1;"
+            swiper-animate-effect="fadeInDown"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.75s"
+          />
+          <div
+            class="ani resize"
+            style="left:45rem;top:170rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="1.3s"
+          >
+            <div>留下您的信息，工作人员会在2个工作日内与您联系</div>
+          </div>
+          <div
+            class="ani resize"
+            style="left:45rem;top:200rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="1.6s"
+          >
+              <div class="online">
+                  <div>姓名：</div>
+                  <input  type="text">
+              </div>
+          </div>
+          <div
+            class="ani resize"
+            style="left:45rem;top:240rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="1.9s"
+          >
+              <div class="online">
+                  <div>电话：</div>
+                  <input  type="text">
+              </div>
+          </div>
+          <div
+            class="ani resize"
+            style="left:45rem;top:280rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="2.2s"
+          >
+              <div class="online">
+                  <div>区域：</div>
+                  <input  type="text">
+              </div>
+          </div>
+          <div
+            class="ani resize"
+            style="left:45rem;top:320rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="2.5s"
+          >
+              <div class="online">
+                  <div>地址：</div>
+                  <input  type="text">
+              </div>
+          </div>
+         
+          <div
+            class="ani resize"
+            style="left:45rem;top:240rem;z-index:3;color: #FFFFFF;"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="2.8s"
+          >
+            
+          </div>
 
-        
-        
-        
+          <img
+            src="upload/5-3.png"
+            class="ani resize"
+            style="width:130rem;height:40rem;left:95rem;top:385rem;z-index:5;"
+            swiper-animate-effect="fadeInDown"
+            swiper-animate-duration="0.3s"
+            swiper-animate-delay="1.5s"
+          />
+        </section>
+      </div>
+
+      <img
+        src="images/web-swipe-tip.png"
+        style="width:20px;height:15px; top:460px; left:150px;"
+        id="array"
+        class="resize"
+      />
+      <div class="swiper-pagination"></div>
     </div>
-    
-   <img src="images/web-swipe-tip.png" style="width:20px;height:15px; top:460px; left:150px;" id="array" class="resize"> 
-  <div class="swiper-pagination"></div>  
-</div>
 
+    <script>
 
-<script>  
+      scaleW = window.innerWidth / 320;
+      scaleH = window.innerHeight / 480;
+      var resizes = document.querySelectorAll(".resize");
+      for (var j = 0; j < resizes.length; j++) {
+        resizes[j].style.width =
+          parseInt(resizes[j].style.width) * scaleW + "px";
+        resizes[j].style.height =
+          parseInt(resizes[j].style.height) * scaleH + "px";
+        resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + "px";
+        resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + "px";
+      }
+      var scales = document.querySelectorAll(".txt");
+      for (var i = 0; i < scales.length; i++) {
+        ss = scales[i].style;
+        ss.webkitTransform = ss.MsTransform = ss.msTransform = ss.MozTransform = ss.OTransform = ss.transform =
+          "translateX(" +
+          (scales[i].offsetWidth * (scaleW - 1)) / 2 +
+          "px) translateY(" +
+          (scales[i].offsetHeight * (scaleH - 1)) / 2 +
+          "px)scaleX(" +
+          scaleW +
+          ") scaleY(" +
+          scaleH +
+          ") ";
+      }
 
-scaleW=window.innerWidth/320;
-scaleH=window.innerHeight/480;
-var resizes = document.querySelectorAll('.resize');
-          for (var j=0; j<resizes.length; j++) {
-           resizes[j].style.width=parseInt(resizes[j].style.width)*scaleW+'px';
-		   resizes[j].style.height=parseInt(resizes[j].style.height)*scaleH+'px';
-		   resizes[j].style.top=parseInt(resizes[j].style.top)*scaleH+'px';
-		   resizes[j].style.left=parseInt(resizes[j].style.left)*scaleW+'px'; 
-	
-          }
-var scales = document.querySelectorAll('.txt');
-for (var i=0; i<scales.length; i++) {
-	ss=scales[i].style;
-	ss.webkitTransform = ss.MsTransform = ss.msTransform = ss.MozTransform = ss.OTransform =ss.transform='translateX('+scales[i].offsetWidth*(scaleW-1)/2+'px) translateY('+scales[i].offsetHeight*(scaleH-1)/2+'px)scaleX('+scaleW+') scaleY('+scaleH+') ';
-}
+      var mySwiper = new Swiper(".swiper-container", {
+        direction: "vertical",
+        pagination: ".swiper-pagination",
+        mousewheelControl: true,
+        onInit: function(swiper) {
+          swiperAnimateCache(swiper);
+          swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: function(swiper) {
+          swiperAnimate(swiper);
+        }
+      });
 
-		  
-  var mySwiper = new Swiper ('.swiper-container', {
-   direction : 'vertical',
-   pagination: '.swiper-pagination',
-   mousewheelControl : true,
-   onInit: function(swiper){
-   swiperAnimateCache(swiper);
-   swiperAnimate(swiper);
-	  },
-   onSlideChangeEnd: function(swiper){
-	swiperAnimate(swiper);
-    }	  
-	   })      
-		 
-	//如果需要发请求
-	var $http = axios.create({
-	  baseURL: "www.baidu.com",
-	  timeout: 30000,
-	  headers: {
-	  },
-	
-	});
-	  // console.log($http.get)
-  </script>
-</body>
+      console.log($)
+    </script>
+  </body>
 </html>

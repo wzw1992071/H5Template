@@ -1,5 +1,6 @@
-项目已经封装了请求和移动端适配（psd测距直接使用rem就可以了，例如psd测距100px..样式就写100rem）
-
+项目已经封装了请求和移动端适配（可以根据设计稿调整）
+document.documentElement.style.fontSize = document.documentElement.clientWidth / 640*100 + 'px';
+可以根据设计稿调整640
 代码填充
 z-index:3  出场顺序
 swiper-animate-effect="fadeInLeft"  出场方式
